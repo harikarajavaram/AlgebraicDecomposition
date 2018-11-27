@@ -5,12 +5,10 @@
 #include <time.h>
 
 int N = 3;
-
+//choose d-1 shares randomly and compute dth share by subracting the sum of d-1 
+//shares from orignal x and take mod
 int * share(int x, int d){
 	int max = (int) pow(2,N);
-	//int shares[d]; 
-	//memset(shares,0,d*sizeof(int));
-	//int *p = shares;
 	int* shares = malloc(sizeof(int) * d);
 	int sum = 0;
 	for(int i=0;i<d-1;i++){
@@ -25,6 +23,7 @@ int * share(int x, int d){
 	return shares;
 }
 
+//add all shares and take mod to get original x
 int decode(int shares[],int d){
 	int original = shares[0];
 	for(int i=1;i<d;i++){
@@ -33,7 +32,7 @@ int decode(int shares[],int d){
 	int max = (int) pow(2,N);
 	return original % max;	
 }
-
+/*
 int main(){
 	int x = 7;
 	int d = 4;
@@ -51,3 +50,4 @@ int main(){
 	return 0;
 }
 
+*/
