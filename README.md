@@ -1,4 +1,4 @@
-#Algebraic Decomposition Method
+# Algebraic Decomposition Method
 
 This project is the implementation of algebraic decomposition method. Algebraic decomposition provides an efficient implementation of polynomial methods for s-boxes based on CPRR scheme. 
 
