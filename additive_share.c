@@ -36,10 +36,9 @@ unsigned int decode(unsigned int shares[],unsigned int d){
 	return original % max;	
 }
 
-
 //main function to individually test 'share' and 'decode' functions
 /*
-unsigned int main(){
+int main(){
 	unsigned int x = 7;
 	unsigned int d = 4;
 	unsigned int seed = time(NULL);

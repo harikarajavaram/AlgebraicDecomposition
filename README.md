@@ -14,14 +14,15 @@ This method is efficient is computing the sbox as it is pre-computing the values
 
 ## To Run
 
-The evaluate.c file calls the sbox function. 
-1. gcc -o evaluate evaluate.c
-2. ./evaluate 
+The test.c file calls the sbox function, computes the sbox value and also compares it to the actual s-box values. 
+1. gcc -o test test.c -lm
+2. ./test
 
 
 ## Limitations
 
-This code uses a naive implmentation of CPRR and is not integrated with the actual CPRR method.
+1. This code uses a naive implmentation of CPRR and is not integrated with the actual CPRR method. 
+2. It is assumed that the equations of polynomials p_i, q_i, l_0, l_i0, l_ij, f_i are given. 
 
 ## References
 
