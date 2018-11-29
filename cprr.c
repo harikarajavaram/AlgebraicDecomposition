@@ -3,23 +3,35 @@
 #include <math.h>
 #include "additive_share.c"
 
-//naive way of implementing cprr
-int* cprr(int shares[], int d){
-	int x = decode(shares,d);
-	int polyans =  (3 * x * x * x * x * x) - (2 * x * x) + (7 * x) - 6;
-	int max = pow(2,N);
+//function that evalutes polynomial 
+unsigned int function(unsigned int x)
+{
+    unsigned int polynomial = 5*pow(x,2);
+    return polynomial; 
+}
+
+//naive implementation of cprr
+unsigned int* cprr(unsigned int shares[], unsigned int d, unsigned int (* f)(unsigned int)){
+	unsigned int x = decode(shares,d);
+	unsigned int polyans =  (*f)(x);
+	unsigned int max = pow(2,N);
 	polyans = polyans % max;
-	printf("%d\n", polyans);
-	int *a = share(polyans,d);
+	//prunsigned intf("%d\n", polyans);
+	unsigned int *a = share(polyans,d);
 	return a;
 }
 
-int main(){
-	int shares[3] = {1,7,5};
-	int d = 3;
-	int *ans = cprr(shares,d);
+//main function to individually test 'cprr' function
+
+unsigned int main(){
+	unsigned int shares[3] = {1,7,5};
+	unsigned int d = 3;
+	unsigned int *ans = cprr(shares,d,function);
 	printf("printing cprr result\n");
-	for(int k=0;k<d;k++){
-		printf("%d\n", ans[k]);
+	for(unsigned int k=0;k<d;k++){
+		printf("%d\n", shares[k]);
 	}
 }
+
+
+
