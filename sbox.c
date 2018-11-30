@@ -1,3 +1,9 @@
+/*
+Author : Rajavaram Harika
+Email ID : harika.rajavaram@gmail.com
+Contents : Functions to compute the polynomial equations and compute the sbox
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
@@ -93,10 +99,6 @@ unsigned int *qi(unsigned int shares[],unsigned int d, unsigned int i){
 	for(unsigned int k=1;k<=r;k++){
 		//evaluation of gj 
 		unsigned int *temp = g(shares,d,k);
-/*		for(unsigned int m=0;m<d;m++){
-			printf("g values %d %d\n",temp[m],k);
-		}
-*/
 		unsigned int *lijans = malloc(sizeof(int) * d);
 		//array look-ups for lij values
 		for(unsigned int u=0;u<d;u++){
@@ -112,7 +114,6 @@ unsigned int *qi(unsigned int shares[],unsigned int d, unsigned int i){
 	for(unsigned int v=0;v<d;v++){
 		li0temp[v] = lij[(3 * (i-1)*256)+(2*256)+ shares[v]];
 		qians[v] = (qians[v]  ^ li0temp[v]) % max;
-		//printf("qians %d\n", qians[v]);
 	}
 	return qians;	
 }

@@ -1,6 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+/*
+Author : Rajavaram Harika
+Email ID : harika.rajavaram@gmail.com
+Contents : Functions to split a value into shares and also to get back value from shares
+*/
+
 #include <math.h>
 #include <time.h>
 
@@ -12,17 +18,12 @@ unsigned int * share(unsigned int x, unsigned int d){
 	unsigned int max = (unsigned int) pow(2,N);
 	unsigned int* shares = malloc(sizeof(unsigned int) * d);
 	unsigned int sum = 0;
-//	unsigned int seed = time(NULL);
-//	srand(seed);	
 	for(unsigned int i=0;i<d-1;i++){
 		unsigned int num = rand()%max;
 		shares[i] = num;
 		sum = sum ^ shares[i];
 	}
 	shares[d-1] = ((x ^ sum) % max);
-	/*if(shares[d-1] < 0){
-		shares[d-1] = shares[d-1] + max;
-	}*/
 	return shares;
 }
 

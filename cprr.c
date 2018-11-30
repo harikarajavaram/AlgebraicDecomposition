@@ -1,3 +1,9 @@
+/*
+Author : Rajavaram Harika
+Email ID : harika.rajavaram@gmail.com
+Contents : Naive implementation of CPRR function
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
@@ -13,11 +19,9 @@ unsigned int function(unsigned int x)
 //naive implementation of cprr
 unsigned int* cprr(unsigned int shares[], unsigned int d, unsigned int (* f)(unsigned int)){
 	unsigned int x = decode(shares,d);
-//	printf("%d\n", x);
 	unsigned int polyans =  (*f)(x);
 	unsigned int max = pow(2,N);
 	polyans = polyans % max;
-	//prunsigned intf("%d\n", polyans);
 	unsigned int *a = share(polyans,d);
 	return a;
 }

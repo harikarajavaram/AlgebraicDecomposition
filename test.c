@@ -1,3 +1,9 @@
+/*
+Author : Rajavaram Harika
+Email ID : harika.rajavaram@gmail.com
+Contents : Code to evaluate the sbox and also test it with sbox from sage code3
+*/
+
 #include "sbox.c"
 
 //prints both sboxes got from code and from the actual sbox array
@@ -14,7 +20,7 @@ int test(int x, int d){
 	// decoding the shares got from sbox evaluation
 	unsigned int sbox_code = decode(ans,d);
 	printf("sbox evaluation by program is %d\n",sbox_code);
-	printf("actual sbox from array is %d\n", s[x]);
+	printf("sbox from sage code is %d\n", s[x]);
 }
 
 int main(){
