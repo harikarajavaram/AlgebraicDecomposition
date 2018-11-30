@@ -1,7 +1,7 @@
 /*
 Author : Rajavaram Harika
 Email ID : harika.rajavaram@gmail.com
-Contents : Code to evaluate the sbox and also test it with sbox from sage code3
+Contents of file : Code to evaluate the sbox and also test it with sbox from sage code3
 */
 
 #include "sbox.c"

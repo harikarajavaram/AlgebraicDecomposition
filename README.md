@@ -23,6 +23,7 @@ The test.c file calls the sbox function, computes the sbox value and also compar
 
 1. This code uses a naive implmentation of CPRR and is not integrated with the actual CPRR method. 
 2. It is assumed that the equations of polynomials p_i, q_i, l_0, l_i0, l_ij, f_i are given. 
+3. After every composition of functions, we have to divide the obtained equation by the irreducible polynomial of the field over which the polynomials are defined. Currently, that division by irreducible polynomial is not being done.
 
 ## References
 

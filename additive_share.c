@@ -1,12 +1,11 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
 /*
 Author : Rajavaram Harika
 Email ID : harika.rajavaram@gmail.com
-Contents : Functions to split a value into shares and also to get back value from shares
+Contents of file : Functions to split a value into shares and also to get back value from shares
 */
 
+#include <stdio.h>
+#include <stdlib.h>
 #include <math.h>
 #include <time.h>
 

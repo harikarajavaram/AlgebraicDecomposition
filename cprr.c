@@ -1,7 +1,7 @@
 /*
 Author : Rajavaram Harika
 Email ID : harika.rajavaram@gmail.com
-Contents : Naive implementation of CPRR function
+Contents of file : Naive implementation of CPRR function
 */
 
 #include <stdio.h>
@@ -9,7 +9,7 @@ Contents : Naive implementation of CPRR function
 #include <math.h>
 #include "additive_share.c"
 
-//function that evalutes polynomial 
+//function that evalutes polynomial. It is called from CPRR
 unsigned int function(unsigned int x)
 {
     unsigned int polynomial = 5*pow(x,2)+3*x;

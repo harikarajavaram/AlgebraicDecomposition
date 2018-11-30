@@ -1,7 +1,7 @@
 /*
 Author : Rajavaram Harika
 Email ID : harika.rajavaram@gmail.com
-Contents : Functions to compute the polynomial equations and compute the sbox
+Contents of file : Functions to compute the polynomial equations and compute the sbox
 */
 
 #include <stdio.h>
@@ -156,10 +156,9 @@ unsigned int *pi(unsigned int shares[], unsigned int d){
 //taking xor of all pi polynomials
 	for(unsigned int o=0;o<d;o++){
 		pians[o] = (p1ans[o] ^ p2ans[o] ^ p3ans[o] ^ p4ans[o] ^ p5ans[o] ^ p6ans[o] ^ p7ans[o] ^ p8ans[o] ^ p9ans[o])%max; 
-		//printf("pians %d\n",p1ans[o]);
 	}
 
-	// freeing the pointers
+	// freeing the pointers to avoid memory leaks
 	free(q1ans);
 	free(q2ans);
 	free(q3ans);
@@ -189,9 +188,6 @@ unsigned int *sbox(unsigned int shares[], unsigned int d){
 	}
 	//evaluating pi polynomials
 	int* pans = pi(shares,d);
-/*	for(unsigned int e=0;e<d;e++){
-		printf("pans %d\n", pans[e]);
-	}*/
 	int* l0ans = malloc(sizeof(int) * d);
 	//looking up the l0 values from l0 array
 	for(unsigned int w=0;w<d;w++){
@@ -202,8 +198,6 @@ unsigned int *sbox(unsigned int shares[], unsigned int d){
 	//summing up the pi values and l0 values
 	for(unsigned int b=0;b<d;b++){
 		sboxans[b] = (pans[b]  ^ (l0ans[b]))%max;
-		//printf("pi and l0 %d  %d", pans[b],l0ans[b]);
-		//printf("\n");
 	}
 	return sboxans;
 }
